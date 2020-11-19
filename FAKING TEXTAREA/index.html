@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>[*Bài tập] Ứng dụng vui Faking Textarea on Typing</title>
+</head>
+<body>
+      <table style="margin: 0 auto;">
+            <caption style="font-weight: bold;font-size: 2rem;">Type anthing slowly</caption>
+            <tbody>
+                  <tr>
+                        <td>
+                              <textarea name="inputText" id="inputText" cols="70" rows="20"></textarea>
+                        </td>
+                  </tr>
+            </tbody>
+      </table>
+      <script>
+            const fakeText = "TÔI LÀ ĐỨA NGU NGỐC!";
+            let countText = 0;
+            let fakeTextOutput = "";
+            window.addEventListener("keyup",makeFakeTextPrint);
+
+            function makeFakeTextPrint() {
+
+                  fakeTextOutput += fakeText[countText]
+                  document.getElementById("inputText").value = fakeTextOutput;
+                  countText++;
+                  if (countText === fakeText.length+1) {
+                        countText = 0;
+                        document.getElementById("inputText").value = "";
+                        fakeTextOutput = "";
+                  }
+                  // setTimeout("makeFakeTextPrint()",1);
+            }
+      </script>
+</body>
+</html>

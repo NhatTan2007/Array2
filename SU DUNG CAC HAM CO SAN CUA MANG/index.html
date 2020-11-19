@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>[Bài tập] Sử dụng các hàm có sẵn của mảng</title>
+</head>
+<body>
+      <script>
+            document.write("Bài 1<br>");
+            let myColor = ["Red", "Green", "White", "Black"];
+            document.write(`${myColor.join()}<hr>`);
+            document.write("Bài 2<br>");
+            let numberInput = prompt("Nhập vào số bất kỳ");
+            let result = [];
+            for (let i = 0; i < numberInput.length; i++) {
+                  if (i === 0 ) {result.push(numberInput[i]);
+                  } else if (numberInput[i-1] % 2 === 0 && numberInput[i] % 2 === 0) {
+                        result.push(`-${numberInput[i]}`);
+                  } else {
+                        result.push(numberInput[i]);
+                  }
+            }
+            document.write(`${result.join("")}<hr>`);
+            document.write("Bài 3<br>");
+            let stringInput = prompt("Nhập vào chuỗi bất kỳ");
+            let resultString = [];
+            for (let i = 0; i < stringInput.length; i++) {
+                  if (stringInput[i] === stringInput[i].toUpperCase()) {
+                        resultString[i] = stringInput[i].toLowerCase();
+                  } else {
+                        resultString[i] = stringInput[i].toUpperCase();
+                  }
+            }
+            document.write(resultString.join(""));
+      </script>
+</body>
+</html>

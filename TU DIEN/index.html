@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <style>
+            table {
+                  border-collapse: collapse;
+            }
+            td {
+                  border: 1px solid black;
+                  width: 100px;
+            }
+      </style>
+</head>
+<body>
+      <table>
+            <tbody>
+                  <tr>
+                        <td>Từ cần tra</td>
+                        <td><input type="text" name="wordInput" id="wordInput"></td>
+                        <td><button id="btnSearch">Search</button></td>
+                  </tr>
+                  <tr>
+                        <td colspan="3" id="means"></td>
+                  </tr>
+                  
+            </tbody>
+      </table>
+      <script>
+            let listVocabulary = [
+                  {
+                        word: "pen",
+                        means: "bút mực"
+                  },
+                  {
+                        word: "pencil",
+                        means: "bút chì"
+                  },
+                  {
+                        word: "paper",
+                        means: "giấy"
+                  },
+                  {
+                        word: "eraser",
+                        means: "cục tẩy, cục gôm"
+                  },
+                  {
+                        word: "pencial sharpener",
+                        means: "đồ chuốt, đồ gọt bút chì"
+                  },
+                  {
+                        word: "book",
+                        means: "sách"
+                  },
+                  {
+                        word: "pack",
+                        means: "túi đeo, ba lô"
+                  },
+                  {
+                        word: "crayon",
+                        means: "bút màu sáp"
+                  },
+                  {
+                        word: "scissor",
+                        means: "cái kéo"
+                  },
+                  {
+                        word: "glue",
+                        means: "keo dán"
+                  },
+                  {
+                        word: "calculator",
+                        means: "máy tính"
+                  },
+                  {
+                        word: "com-pass",
+                        means: "com-pa"
+                  },
+                  {
+                        word: "bag",
+                        means: "cái túi"
+                  },
+                  {
+                        word: "ruler",
+                        means: "cây thước"
+                  },
+                  {
+                        word: "board",
+                        means: "bảng"
+                  },
+                  {
+                        word: "chalk",
+                        means: "phấn"
+                  },
+                  {
+                        word: "dictionary",
+                        means: "từ điển"
+                  },
+                  {
+                        word: "water color",
+                        means: "màu nước"
+                  },
+                  {
+                        word: "global",
+                        means: "quả địa cầu"
+                  },
+                  {
+                        word: "protractor",
+                        means: "thước đo góc"
+                  },
+                  {
+                        word: "stapler",
+                        means: "dụng cụ kim bấm"
+                  },
+                  {
+                        word: "paintbrush",
+                        means: "cọ quét sơn"
+                  },
+                  {
+                        word: "paper clip",
+                        means: "kẹp giấy"
+                  }
+            ];
+            document.getElementById("btnSearch").addEventListener("click",serachMeaning);
+
+            function serachMeaning() {
+                  wordInput = document.getElementById("wordInput").value;
+                  for (let i = 0; i < listVocabulary.length; i++) {
+                  if (listVocabulary[i].word === wordInput) {
+                        document.getElementById("means").innerHTML = listVocabulary[i].means;
+                        break;
+                  } else {
+                        document.getElementById("means").innerHTML = "Từ vựng không có trong từ điển";
+                  }
+            }
+            }
+      </script>
+</body>
+</html>

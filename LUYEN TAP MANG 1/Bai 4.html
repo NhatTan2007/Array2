@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Bài 4</title>
+</head>
+<body>
+      <script>
+            function createIntArray(size,minRange,maxRange) {
+                  let intArray = [];
+                  for (let i = 0; i < size; i++) {
+                        intArray[i] = Math.floor(Math.random()*(maxRange - minRange + 1)) + minRange;
+                  }
+                  ;
+                  return intArray;
+            }
+
+            function mainProgram() {
+                  let intSampleArray = createIntArray(15,50,500);
+                  document.write(`Mảng ban đầu: ${intSampleArray.join(", ")}<br>`);
+                  intSampleArray = intSampleArray.reverse();
+                  document.write(`Mảng đảo ngược: ${intSampleArray.join(", ")}`);
+            }
+
+            mainProgram();
+      </script>
+</body>
+</html>

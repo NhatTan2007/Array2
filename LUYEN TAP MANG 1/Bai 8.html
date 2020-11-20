@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Bài 8</title>
+</head>
+<body>
+      <script>
+            function createRandomIntArray(size,minRange,maxRange) {
+                  let intArray = [];
+                  for (let i = 0; i < size; i++) {
+                        intArray[i] = Math.floor(Math.random()*(maxRange - minRange + 1)) + minRange;
+                  }
+                  ;
+                  return intArray;
+            }
+
+            function mainProgram() {
+                  let randomIntArray = createRandomIntArray(10,10,20);
+                  document.write(`Mảng random khởi tạo là: ${randomIntArray}<br>`);
+                  document.write(`Mảng theo thứ tự giảm dẩn ${randomIntArray.sort(function(a,b){return b - a;})}`);
+            }
+
+            mainProgram();
+
+      </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Bài 2</title>
+</head>
+<body>
+      <script>
+            
+            function createIntArray(size,minRange,maxRange) {
+                  let intArray = [];
+                  for (let i = 0; i < size; i++) {
+                        intArray[i] = Math.floor(Math.random()*(maxRange - minRange + 1)) + minRange;
+                  }
+                  ;
+                  return intArray;
+            }
+
+            function findMaxNumber(array) {
+                  console.log(array)
+                  let maxNumber = 0;
+                  let indexMaxNumber;
+                  for (index in array) {
+                        if (array[index] > maxNumber) {
+                              maxNumber = array[index];
+                              indexMaxNumber = index;
+                        }
+                  }
+                  return {maxNumber : maxNumber, indexMaxNumber : indexMaxNumber};
+            }
+
+            function mainProgram() {
+                  let result = findMaxNumber(createIntArray(10,40,70));
+                  document.write(`Your max number in Array is ${result.maxNumber} and its index is ${result.indexMaxNumber}`);
+            }
+
+            mainProgram();
+      </script>
+</body>
+</html>

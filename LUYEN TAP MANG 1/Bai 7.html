@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Bài 7</title>
+</head>
+<body>
+      <script>
+            function createRandomIntArray(size,minRange,maxRange) {
+                  let intArray = [];
+                  for (let i = 0; i < size; i++) {
+                        intArray[i] = Math.floor(Math.random()*(maxRange - minRange + 1)) + minRange;
+                  }
+                  ;
+                  return intArray;
+            }
+
+            function findNumberHaveInArrayOrNot(number,array) {
+                  return array.indexOf(number);
+            }
+
+            function removeNumberInArray(number,array) {
+                  while (findNumberHaveInArrayOrNot(number,array) !== -1) {
+                        array.splice(array.indexOf(number),1);
+                        array.push(0);
+                  }
+                  return array;
+            }
+
+            function mainProgram() {
+                  let randomIntArray = createRandomIntArray(10,10,20);
+                  let numberInput;
+                  do {
+                        numberInput = +prompt("Nhập vào số cần tìm trong dãy");
+                  } while (isNaN(numberInput));
+                  document.write(`Mảng random khởi tạo là: ${randomIntArray}<br>`);
+                  document.write(`Mảng sau khi remove ${numberInput} khỏi mảng là: ${removeNumberInArray(numberInput, randomIntArray)}`);
+
+            }
+
+            mainProgram();
+
+      </script>
+</body>
+</html>

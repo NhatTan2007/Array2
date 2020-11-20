@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Bài 9</title>
+</head>
+<body>
+      <script>
+            function createRandomIntArray(size,minRange,maxRange) {
+                  let intArray = [];
+                  for (let i = 0; i < size; i++) {
+                        intArray[i] = Math.floor(Math.random()*(maxRange - minRange + 1)) + minRange;
+                  }
+                  ;
+                  return intArray;
+            }
+
+            function mainProgram() {
+                  let randomIntArrayA = createRandomIntArray(10,-30,20);
+                  let randomIntArrayB = createRandomIntArray(10,10,200);
+                  let randomIntArrayC = randomIntArrayA.concat(randomIntArrayB);
+                  document.write(`Mảng random A khởi tạo là: ${randomIntArrayA.join(", ")}<br>`);
+                  document.write(`Mảng random B khởi tạo là: ${randomIntArrayB.join(", ")}<br>`);
+                  document.write(`Mảng C khi nối hai mảng A và B là: ${randomIntArrayC.join(", ")}`);
+            }
+
+            mainProgram();
+
+      </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Bài 2</title>
+</head>
+<body>
+      <script>
+            
+            function createIntArray(size,minRange,maxRange) {
+                  let intArray = [];
+                  for (let i = 0; i < size; i++) {
+                        intArray[i] = Math.floor(Math.random()*(maxRange - minRange + 1)) + + minRange;
+                  }
+                  ;
+                  return intArray;
+            }
+
+            function findMaxNumber(array) {
+                  console.log(array)
+                  let maxNumber = 0;
+                  for (index in array) {
+                        if (array[index] > maxNumber) {
+                              maxNumber = array[index];
+                        }
+                  }
+                  return maxNumber;
+            }
+
+            function averageElementsIntArray(array) {
+                  let sumElements = 0;
+                  for (let i = 0; i < array.length; i++) {
+                        sumElements += array[i];
+                  }
+
+                  return (sumElements/array.length);
+            }
+
+            function mainProgram() {
+                  let intArray = createIntArray(10,40,120);
+                  document.write(`Your max number in Array is ${findMaxNumber(intArray)} and average elements of Array is ${averageElementsIntArray(intArray)}`);
+            }
+
+            mainProgram();
+      </script>
+</body>
+</html>

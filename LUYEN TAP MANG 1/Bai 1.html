@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Bài 1</title>
+</head>
+<body>
+      <script>
+
+            function createIntArray(size,minRange,maxRange) {
+                  let intArray = [];
+                  for (let i = 0; i < size; i++) {
+                        intArray[i] = Math.floor(Math.random()*(maxRange - minRange + 1)) + minRange;
+                  }
+                  return intArray;
+            }
+
+            function findElementsGreaterEquals(number,array) {
+                  let greaterElements = [];
+                  for (let value of array) {
+                        if (value >= number) {greaterElements.push(value)}
+                  }
+                  return greaterElements;
+            }
+
+            function mainProgram() {
+                  let printArray = findElementsGreaterEquals(10,createIntArray(10,30,90));
+                  document.write(`${printArray.join(", ")}`);
+            }
+
+            mainProgram();
+      </script>
+</body>
+</html>

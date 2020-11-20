@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Bài 5</title>
+</head>
+<body>
+      <script>
+            function createRandomIntArray(size,minRange,maxRange) {
+                  let intArray = [];
+                  for (let i = 0; i < size; i++) {
+                        intArray[i] = Math.floor(Math.random()*(maxRange - minRange + 1)) + minRange;
+                  }
+                  ;
+                  return intArray;
+            }
+
+            function findNegativeIntNumbers(array) {
+                  let listNegativeIntNumbers = [];
+                  for (let value of array) {
+                        if (value < 0) {
+                              listNegativeIntNumbers.push(value);
+                        }
+                  }
+                  return listNegativeIntNumbers;
+            }
+
+            function mainProgram() {
+                  let randomIntArray = createRandomIntArray(10,-50,20);
+                  let resultArray = findNegativeIntNumbers(randomIntArray);
+                  document.write(`Các số âm trong dãy vừa tạo là ${resultArray.join(", ")}`); 
+            }
+
+            mainProgram();
+
+      </script>
+</body>
+</html>

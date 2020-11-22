@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Bài 2</title>
+</head>
+<body>
+      <script>
+            let sampleArray = [];
+            for (let i = 0; i < 10; i++) {
+                  sampleArray.push(Math.floor(Math.random()*31) + 20);
+            }
+
+            document.write(`Mảng random đã tạo là: ${sampleArray.join(", ")}<br>`);
+            sampleArray.reverse();
+            document.write(`Mảng random sau khi đảo ngược là: ${sampleArray.join(", ")}`);
+      </script>
+</body>
+</html>

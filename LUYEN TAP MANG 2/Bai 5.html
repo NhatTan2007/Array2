@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Bài 5</title>
+</head>
+<body>
+      <script>
+            let stringInput1;
+            let stringInput2;
+            do {
+                  stringInput1 = prompt("Nhập vào chuỗi thứ nhất");
+            } while (stringInput1.trim().length === 0);
+            do {
+                  stringInput2 = prompt("Nhập vào chuỗi thứ hai");
+            } while (stringInput2.trim().length === 0);
+
+            while (stringInput1.indexOf("  ") !== -1 || stringInput2.indexOf("  ") !== -1) {
+                  stringInput1 = stringInput1.replace("  "," ");
+                  stringInput2 = stringInput2.replace("  "," ");
+            }
+            document.write(`Chuỗi thứ nhất đã nhập là: ${stringInput1}<br>`);
+            document.write(`Chuỗi thứ hai đã nhập là: ${stringInput2}<br>`);
+            if (check2StringIsTheSame(stringInput1,stringInput2)) {
+                  document.write("Hai chuỗi đã nhập giống nhau");
+            } else {
+                  document.write("Hai chuỗi đã nhập không giống nhau");
+            }
+            function check2StringIsTheSame(string1,string2) {
+                  if (stringInput1.length !== stringInput2.length) {
+                        return false;
+                  } else if (stringInput1.length === stringInput2.length) {
+                        for (let i = 0; i < stringInput1.length; i++) {
+                              if (stringInput1[i] !== stringInput2[i]) {
+                                    return false;
+                              };
+                        }
+                        return true;
+                  }
+            }
+      </script>
+</body>
+</html>

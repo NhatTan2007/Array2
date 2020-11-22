@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Bài 6</title>
+</head>
+<body>
+      <script>
+            let stringInput1;
+            do {
+                  stringInput1 = prompt("Nhập vào chuỗi bất kỳ");
+            } while (stringInput1.trim().length === 0);
+
+            document.write(`Chuỗi đã nhập: ${stringInput1}<br>`);
+
+            while (stringInput1.indexOf("-") !== -1) {
+                  stringInput1 = stringInput1.replace("-","_");
+            }
+
+            document.write(`Chuỗi sau khi đã chỉnh sửa ${stringInput1}`);
+            
+      </script>
+</body>
+</html>
